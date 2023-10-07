@@ -8,13 +8,12 @@ import java.util.List;
 
 public class UserDaoJDBCImpl implements UserDao {
     public UserDaoJDBCImpl() {
-        createUsersTable();
     }
 
     @Override
     public void createUsersTable() {
-        String sql = "CREATE TABLE IF NOT EXISTS users (id INT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(255) NOT NULL, " +
-                "last_name VARCHAR(255) NOT NULL,age TINYINT UNSIGNED NOT NULL)";
+        String sql = "CREATE TABLE IF NOT EXISTS users (id INT PRIMARY KEY AUTO_INCREMENT, " +
+                "name VARCHAR(255) NOT NULL, last_name VARCHAR(255) NOT NULL,age TINYINT UNSIGNED NOT NULL)";
         try (Connection connection = Util.getConnection(); Statement statement = connection.createStatement()) {
             statement.execute(sql);
         } catch (SQLException e) {
@@ -59,6 +58,7 @@ public class UserDaoJDBCImpl implements UserDao {
         }
     }
 
+    @Override
     public List<User> getAllUsers() {
         List<User> userList = new ArrayList<>();
         String sql = "SELECT * FROM users";

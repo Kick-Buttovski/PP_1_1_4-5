@@ -1,6 +1,5 @@
 package jm.task.core.jdbc.util;
 
-
 import jm.task.core.jdbc.model.User;
 import org.hibernate.SessionFactory;
 import java.sql.Connection;
@@ -22,7 +21,6 @@ public class Util {
         Connection connection = null;
         try {
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-            System.out.println("Подключение успешно!");
         }
         catch (SQLException e){
             e.printStackTrace();

@@ -12,7 +12,7 @@ import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
 
 public class Util {
-    private static final String URL = "jdbc:mysql://localhost:3306/db_pp_1_1_4";
+    private static final String URL = "jdbc:mysql://localhost:3306/pp_1_1_4";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "1234";
 
